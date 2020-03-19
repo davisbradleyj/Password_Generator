@@ -5,7 +5,6 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
   passwordText.value = password;
 
 }
@@ -13,22 +12,26 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
+// create each of these as a function
+// consider while loop for the char count
 
         // Set global variable for an array from which password characters will be chosen
-        var charAvail = []
-        var password = []
+        var charAvail = ""
+        var passWord = ""
+
 
         // Set basic user questions to determine password length
+        // while ...
         var charCount = prompt("Please select a character length between 8 and 128?");
-        if ((charCount < 8) || (charCount > 128)) {
+        while ((parseInt(charCount) < 8) || (parseInt(charCount) > 128)) {
             alert("Character count must be between 8 and 128, please refresh and try again. Thank you.");
+            parseInt(charCount) = prompt("Please select a character length between 8 and 128?");
         };
         
         // Prompt to user to determine if numbers are in the password array
         var confNumbers = confirm("Would you like numbers in your password?");
         if (confNumbers === true) {
             charAvail = charAvail + "0123456789";
-            console.log(charAvail);
         } else {
             alert("Ok, no numbers.")
         };
@@ -37,7 +40,6 @@ generateBtn.addEventListener("click", writePassword);
         var confUpperLetter = confirm("Would you like upper case letters in your password?");
         if (confUpperLetter === true) {
             charAvail = charAvail + "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            console.log(charAvail);
         } else {
             alert("Ok, no upper case letters.")
         };
@@ -46,7 +48,6 @@ generateBtn.addEventListener("click", writePassword);
         var confLowerLetter = confirm("Would you like lower case letters in your password?");
         if (confLowerLetter === true) {
             charAvail = charAvail + "abcdefghijklmnopqrstuvwxyz";
-            console.log(charAvail);
         } else {
             alert("Ok, no lower case letters.")
         };
@@ -55,10 +56,10 @@ generateBtn.addEventListener("click", writePassword);
         var confSpecial = confirm("Would you like special characters in your password?");
         if (confSpecial === true) {
             charAvail = charAvail + "~!@#$%^&*()";
-            console.log(charAvail);
         } else {
             alert("Ok, no special characters.")
         };
+
 
         // Create loop to generate password, log password to track any issues
         for (var i=0; i < charCount; i++) {
@@ -68,4 +69,8 @@ generateBtn.addEventListener("click", writePassword);
             console.log(password);
         }
          
-        alert(password)
+
+
+
+
+
