@@ -1,18 +1,14 @@
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+</head>
+<body>
 
-  passwordText.value = password;
-
-}
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-
+    <script type="text/javascript">
 
         // Set global variable for an array from which password characters will be chosen
         var charAvail = []
@@ -69,3 +65,8 @@ generateBtn.addEventListener("click", writePassword);
         }
          
         alert(password)
+
+
+    </script>
+    </body>
+</html>
