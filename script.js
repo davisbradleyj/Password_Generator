@@ -13,16 +13,19 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-var array = []
+
+// Set global variables
+        var array = []
         var numbers = [01234456789];
         var upperLetter = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
         var lowerLetter = ["abcdefghijklmnopqrstuvwxyz"];
         var special = ["~!@#$%^&*?_<>+{}"];
 
-
+// Set basic user questions to determine password length
         var charCount = prompt("Please select a character length between 8 and 128?");
         if ((charCount < 8) || (charCount > 128)) {
             alert("Character count must be between 8 and 128, please refresh and try again. Thank you.");
+            break;
         };
         
         var confNumbers = confirm("Would you like numbers?");
