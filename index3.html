@@ -10,6 +10,13 @@
 
     <script type="text/javascript">
 
+// Write password to the #password input
+  function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+  passwordText.value = password;
+  }
+
         // Set global variable for an array from which password characters will be chosen
         var charAvail = []
         var password = []

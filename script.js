@@ -23,38 +23,45 @@ function generatePassword() {
         // Set basic user questions to determine password length
         var charCount = prompt("Please select a character length between 8 and 128?");
         if ((parseInt(charCount) >= 8) && (parseInt(charCount) <= 128)) {
-            return 
             
-            // Prompt to user to determine contents of password array
-            var confNumbers = confirm("Would you like numbers in your password?");
-            if (confNumbers === true) {
-                var charAvail = "0123456789";
-            };
+            return setPassword(setCharAvail(), charCount);
 
-            var confUpperLetter = confirm("Would you like upper case letters in your password?");
-             if (confUpperLetter === true) {
-                charAvail = charAvail + "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-             };
+        } else { 
+            alert("Character count must be between 8 and 128.");
+            generatePassword();
+        };
+}
 
-            var confLowerLetter = confirm("Would you like lower case letters in your password?");
-            if (confLowerLetter === true) {
-                charAvail = charAvail + "abcdefghijklmnopqrstuvwxyz";
-            };
+function setCharAvail(){
+        var confNumbers = confirm("Would you like numbers in your password?");
+        if (confNumbers === true) {
+            var charAvail = "0123456789";
+        };
 
-            var confSpecial = confirm("Would you like special characters in your password?");
-            if (confSpecial === true) {
-                charAvail = charAvail + "~!@#$%^&*()";
-            }
-            
+        var confUpperLetter = confirm("Would you like upper case letters in your password?");
+        if (confUpperLetter === true) {
+            charAvail = charAvail + "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        };
+
+        var confLowerLetter = confirm("Would you like lower case letters in your password?");
+        if (confLowerLetter === true) {
+            charAvail = charAvail + "abcdefghijklmnopqrstuvwxyz";
+        };
+
+        var confSpecial = confirm("Would you like special characters in your password?");
+        if (confSpecial === true) {
+            charAvail = charAvail + "~!@#$%^&*()";
+        };
+
+        return fullAray;
+};
+
+function setPassword(){
             // Create loop to generate password, log password to track any issues
-            for (var i=0; i < parseInt(charCount); i++) {
+            for (var i=0; i < charCount; i++) {
                 var randomNumber = Math.floor(Math.random()*charAvail.length);
                 var passChar = charAvail[randomNumber];
                 var passRandom = passRandom + passChar; 
-                console.log(passRandom)
-            
-        } else { 
-            alert("Character count must be between 8 and 128.");
+                console.log(passRandom);
         };
-    };
-}
+};
