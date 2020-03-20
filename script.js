@@ -15,72 +15,46 @@ generateBtn.addEventListener("click", writePassword);
 // consider while loop for the char count
 
         // Set global variable for an array from which password characters will be chosen
-       
+        var passRandom = []
+        var charAvail = []
+        var charCount = []
 
-function generatePassword(){        
-    var passRandom = []
+function generatePassword() {
         // Set basic user questions to determine password length
         var charCount = prompt("Please select a character length between 8 and 128?");
-        if ((parseInt(charCount) > 8) && (parseInt(charCount) < 128)) {
-             
-            // Prompt to user to determine if numbers are in the password array
+        if ((parseInt(charCount) >= 8) && (parseInt(charCount) <= 128)) {
+            return 
+            
+            // Prompt to user to determine contents of password array
             var confNumbers = confirm("Would you like numbers in your password?");
             if (confNumbers === true) {
                 var charAvail = "0123456789";
-            } else {
-                alert("Ok, no numbers.");
             };
 
-            // Prompt to user to determine if uppercase letters are in the password array
             var confUpperLetter = confirm("Would you like upper case letters in your password?");
              if (confUpperLetter === true) {
                 charAvail = charAvail + "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-             } else {
-                alert("Ok, no upper case letters.");
              };
 
-             // Prompt to user to determine if lower case letters are in the password array
             var confLowerLetter = confirm("Would you like lower case letters in your password?");
             if (confLowerLetter === true) {
                 charAvail = charAvail + "abcdefghijklmnopqrstuvwxyz";
-            } else {
-                alert("Ok, no lower case letters.");
             };
 
-            // Prompt to user to determine if special char are in the password array
             var confSpecial = confirm("Would you like special characters in your password?");
             if (confSpecial === true) {
                 charAvail = charAvail + "~!@#$%^&*()";
-            } else {
-                alert("Ok, no special characters.");
-            };
-            console.log(charCount)
-            // Create loop to generate password, log password to track any issues
+            }
             
-            for (var i=0; i < charCount; i++) {
-            var randomNumber = Math.floor(Math.random()*charAvail.length);
-            var passChar = charAvail[randomNumber];
-            var passRandom = passRandom + passChar; 
-            console.log(passRandom);
-            return passRandom;
-            }     
-
+            // Create loop to generate password, log password to track any issues
+            for (var i=0; i < parseInt(charCount); i++) {
+                var randomNumber = Math.floor(Math.random()*charAvail.length);
+                var passChar = charAvail[randomNumber];
+                var passRandom = passRandom + passChar; 
+                console.log(passRandom)
+            
         } else { 
             alert("Character count must be between 8 and 128.");
         };
-
-
     };
-
-
-        
-
-
-
-
-         
-
-
-
-
-
+}

@@ -20,41 +20,33 @@
             alert("Character count must be between 8 and 128, please refresh and try again. Thank you.");
         };
 
-        // Prompt to user to determine if numbers are in the password array
-        var confNumbers = confirm("Would you like numbers in your password?");
-        if (confNumbers === true) {
-            charAvail = charAvail + "0123456789";
-            console.log(charAvail);
-        } else {
-            alert("Ok, no numbers.")
-        };
+            // Prompt to user to determine if numbers are in the password array
+            var confNumbers = confirm("Would you like numbers in your password?");
+            if (confNumbers === true) {
+                var charAvail = "0123456789";
+                console.log(charAvail)
+            };
 
-        // Prompt to user to determine if uppercase letters are in the password array
-        var confUpperLetter = confirm("Would you like upper case letters in your password?");
-        if (confUpperLetter === true) {
-            charAvail = charAvail + "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            console.log(charAvail);
-        } else {
-            alert("Ok, no upper case letters.")
-        };
+            // Prompt to user to determine if uppercase letters are in the password array
+            var confUpperLetter = confirm("Would you like upper case letters in your password?");
+             if (confUpperLetter === true) {
+                charAvail = charAvail + "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                console.log(charAvail)
+             };
 
-        // Prompt to user to determine if lower case letters are in the password array
-        var confLowerLetter = confirm("Would you like lower case letters in your password?");
-        if (confLowerLetter === true) {
-            charAvail = charAvail + "abcdefghijklmnopqrstuvwxyz";
-            console.log(charAvail);
-        } else {
-            alert("Ok, no lower case letters.")
-        };
+             // Prompt to user to determine if lower case letters are in the password array
+            var confLowerLetter = confirm("Would you like lower case letters in your password?");
+            if (confLowerLetter === true) {
+                charAvail = charAvail + "abcdefghijklmnopqrstuvwxyz";
+                console.log(charAvail)
+            };
 
-        // Prompt to user to determine if special char are in the password array
-        var confSpecial = confirm("Would you like special characters in your password?");
-        if (confSpecial === true) {
-            charAvail = charAvail + "~!@#$%^&*()";
-            console.log(charAvail);
-        } else {
-            alert("Ok, no special characters.")
-        };
+            // Prompt to user to determine if special char are in the password array
+            var confSpecial = confirm("Would you like special characters in your password?");
+            if (confSpecial === true) {
+                charAvail = charAvail + "~!@#$%^&*()";
+                console.log(charAvail)
+            };
 
         // Create loop to generate password, log password to track any issues
         for (var i=0; i < charCount; i++) {

@@ -4,8 +4,8 @@ Create an application that generates a random password based on user-selected cr
 
 ## Technologies Used
 - HTML - used to create elements on the DOM
-- CSS - used to add some styling elements
-- JavaScript - used to c
+- CSS - present to add styling elements
+- JavaScript - used to create the logic which controls the application
 - Git - version control system to track changes to source code
 - GitHub - hosts repository that can be deployed to GitHub Pages
 
@@ -34,7 +34,7 @@ THEN the password is either displayed in an alert or written to the page
 
 ## Acknowledgements
 
-Jerome Chenette, Kerwin Hy, Mahisha Manikandan, Nadine Bundschuh, 
+Jerome Chenette, Kerwin Hy, Mahisha Manikandan, Nadine Bundschuh, Kasey Chang, Sam Poppe
 
 ## Author Links
 
