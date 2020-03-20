@@ -10,60 +10,58 @@
 
     <script type="text/javascript">
 
-// Write password to the #password input
-  function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-  passwordText.value = password;
-  }
 
-        // Set global variable for an array from which password characters will be chosen
-        var charAvail = []
-        var password = []
+var charAvail = []
+var charCount = [];
+var charInt = {};
 
-        // Set basic user questions to determine password length
-        var charCount = prompt("Please select a character length between 8 and 128?");
-        if ((charCount < 8) || (charCount > 128)) {
-            alert("Character count must be between 8 and 128, please refresh and try again. Thank you.");
-        };
+function generatePassword() {
+    // Set basic user questions to determine password length
+    while ((charCount) < 8 || (charCount) > 128) {
+        charCount = prompt("Please select a character length between 8 and 128");
+        charInt = charCount
+        console.log(charInt);
+    }
+    return setPassword();
+}
 
-            // Prompt to user to determine if numbers are in the password array
-            var confNumbers = confirm("Would you like numbers in your password?");
-            if (confNumbers === true) {
-                var charAvail = "0123456789";
-                console.log(charAvail)
-            };
+function setPassword() {
 
-            // Prompt to user to determine if uppercase letters are in the password array
-            var confUpperLetter = confirm("Would you like upper case letters in your password?");
-             if (confUpperLetter === true) {
-                charAvail = charAvail + "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-                console.log(charAvail)
-             };
+    var confUpperLetter = confirm("Would you like upper case letters in your password?");
+    if (confUpperLetter === true) {
+        charAvail = charAvail + "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    }
 
-             // Prompt to user to determine if lower case letters are in the password array
-            var confLowerLetter = confirm("Would you like lower case letters in your password?");
-            if (confLowerLetter === true) {
-                charAvail = charAvail + "abcdefghijklmnopqrstuvwxyz";
-                console.log(charAvail)
-            };
+    var confLowerLetter = confirm("Would you like lower case letters in your password?");
+    if (confLowerLetter === true) {
+        charAvail = charAvail + "abcdefghijklmnopqrstuvwxyz";
+    }
 
-            // Prompt to user to determine if special char are in the password array
-            var confSpecial = confirm("Would you like special characters in your password?");
-            if (confSpecial === true) {
-                charAvail = charAvail + "~!@#$%^&*()";
-                console.log(charAvail)
-            };
+    var confNumbers = confirm("Would you like numbers in your password?");
+    if (confNumbers === true) {
+        var charAvail = "0123456789";
+    }
 
-        // Create loop to generate password, log password to track any issues
-        for (var i=0; i < charCount; i++) {
-            var randomNumber = Math.floor(Math.random() * charAvail.length);
-            var passChar = charAvail[randomNumber];
-            password = password + passChar;
-            console.log(password);
-        }
+    var confSpecial = confirm("Would you like special characters in your password?");
+    if (confSpecial === true) {
+        charAvail = charAvail + "~!@#$%^&*?\|,_-";
+    }
 
-        alert(password)
+    console.log(charAvail);
+
+    // Create loop to generate password, log password to track any issues
+    var countChar = parseInt(charInt);
+    console.log(parseInt(charInt));
+    console.log(countChar);
+    for (var i = 0; i < countChar; i++) {
+        var randomNumber = Math.floor(Math.random() * charAvail.length);
+        var passChar = charAvail[randomNumber];
+        var passRandom =+ passChar;
+        console.log(passRandom);
+    }
+}
+
+generatePassword()
 
 // create each of these as a function
 // consider while loop for the char count
