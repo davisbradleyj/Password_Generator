@@ -5,27 +5,18 @@ Create an application that generates a random password based on user-selected cr
 ## Technologies Used
 - HTML - used to create elements on the DOM
 - CSS - present to add styling elements
-- JavaScript - used to create the logic which controls the application
+- JavaScript - used to create the logic controlling the application
 - Git - version control system to track changes to source code
 - GitHub - hosts repository that can be deployed to GitHub Pages
 
-## Acceptance Criteria
+## Summary
 
-GIVEN I need a new, secure password
-WHEN I click the button to generate a password
-THEN I am presented with a series of prompts for password criteria
-WHEN prompted for password criteria
-THEN I select which criteria to include in the password
-WHEN prompted for the length of the password
-THEN I choose a length of at least 8 characters and no more than 128 characters
-WHEN prompted for character types to include in the password
-THEN I choose lowercase, uppercase, numeric, and/or special characters
-WHEN I answer each prompt
-THEN my input should be validated and at least one character type should be selected
-WHEN all prompts are answered
-THEN a password is generated that matches the selected criteria
-WHEN the password is generated
-THEN the password is either displayed in an alert or written to the page
+In creating this password generator, my first objective was to establish the commands that would become the user prompts on an html page within a script tag: a prompt to establish the length of the password, and confirms to establish whether the user wished to include lowercase, uppercase, numbers, and/or special characters.  These characters would be added to an array, and that array length would be referenced in a loop, with the character numbers for the password being the number of times the loop would run.  Once the loop completed, the password was alerted on screen.  In HTML, this was accomplished.
+
+My next challenge was moving the logic into js and creating functions as part of the instructions.  This proved to be a more significant challenge, as some of the variables created were not being read in all portions of the code.  I found that I was able to get all the html/script user prompts to appear, and confirmed that the values were appearing through console.log, however, my most significant wall is that despite all steps appearing to function correctly, and the loop which would generate the password running through the appropriate amount of times, the password was not being written, appearing as "NaN" in console.log, and "Undefined" on the page.
+
+After discussion with Corbin Brockbank, we were able to pinpoint the NaN reference could have been related to a typographical error for how the variable "passRandom" was adding to itself, and confirmed by Kerwin Hy.  Further discussion with Mr. Hy led to a review of each of the variables to ensure proper assignments.  When adding "return" back into the function, the password successfully is added to the page.
+
 
 ## Code Snippet
 
@@ -34,7 +25,7 @@ THEN the password is either displayed in an alert or written to the page
 
 ## Acknowledgements
 
-Jerome Chenette, Kerwin Hy, Mahisha Manikandan, Nadine Bundschuh, Kasey Chang, Sam Poppe
+Jerome Chenette, Kerwin Hy, Mahisha Manikandan, Corbin Brockbank, Nadine Bundschuh, Kasey Chang, Sam Poppe, Juliet George
 
 ## Author Links
 

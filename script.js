@@ -5,7 +5,7 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
     var password = generatePassword();
     var passwordText = document.querySelector("#password");
-    passwordText.value = password;
+    passwordText.textContent = password;
 }
 
 // Add event listener to generate button
@@ -15,7 +15,8 @@ generateBtn.addEventListener("click", writePassword);
 // consider while loop for the char count
 
 // Set global variable for an array from which password characters will be chosen
-var passRandom = [];
+var passRandom = "";
+var randomChar = "";
 var charAvail = [];
 var charCount = [];
 var charInt = {};
@@ -26,10 +27,10 @@ function generatePassword() {
     while ((charCount) < 8 || (charCount) > 128) {
         charCount = prompt("Please select a character length between 8 and 128");
         charInt = charCount
-        console.log(charInt);
+        console.log("charInt: " + charInt);
     }
     return setPassword();
-}
+};
 
 function setPassword() {
 
@@ -56,13 +57,14 @@ function setPassword() {
     console.log(charAvail);
 
     // Create loop to generate password, log password to track any issues
-    var countChar = parseInt(charInt);
-    console.log(parseInt(charInt));
-    console.log(countChar);
-    for (var i = 0; i < countChar; i++) {
-        var randomNumber = Math.floor(Math.random() * charAvail);
-        var passChar = charAvail[randomNumber];
-        var passRandom =+ passChar;
+    console.log(charInt);
+    console.log(charCount);
+    for (var i = 0; i < charCount; i++) {
+        var randomChar = Math.floor(Math.random()*charAvail.length);
+        var passChar = charAvail[randomChar];
+        passRandom += passChar;
         console.log(passRandom);
     }
-} 
+
+    return passRandom;
+};
