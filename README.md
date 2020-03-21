@@ -17,11 +17,53 @@ My next challenge was moving the logic into js and creating functions as part of
 
 After discussion with Corbin Brockbank, we were able to pinpoint the NaN reference could have been related to a typographical error for how the variable "passRandom" was adding to itself, and confirmed by Kerwin Hy.  Further discussion with Mr. Hy led to a review of each of the variables to ensure proper assignments.  When adding "return" back into the function, the password successfully is added to the page.
 
+<img src="https://github.com/davisbradleyj/Responsiveness-Portfolio/blob/master/assets/firstLook.png" width="400">
+<img src="https://github.com/davisbradleyj/Responsiveness-Portfolio/blob/master/assets/characterPrompt.png" width="400">
+<img src="https://github.com/davisbradleyj/Responsiveness-Portfolio/blob/master/assets/numberPrompt.png" width="400">
+<img src="https://github.com/davisbradleyj/Responsiveness-Portfolio/blob/master/assets/upperCasePrompt.png" width="400">
+<img src="https://github.com/davisbradleyj/Responsiveness-Portfolio/blob/master/assets/lowerCasePrompt.png" width="400">
+<img src="https://github.com/davisbradleyj/Responsiveness-Portfolio/blob/master/assets/specialPrompt.png" width="400">
+<img src="https://github.com/davisbradleyj/Responsiveness-Portfolio/blob/master/assets/passwordOutput.png" width="400">
 
 ## Code Snippet
 
 ```js
-```
+function generatePassword() {
+    // Set basic user questions to determine password length
+    while ((charCount) < 8 || (charCount) > 128) {
+        charCount = prompt("Please select a character length between 8 and 128");
+        charInt = charCount
+    }  // function will return the password which will pass through to passwordText.textContent
+    return setPassword();
+};
+
+function setPassword() {
+    // user prompts to determine password contents
+    var confNumbers = confirm("Would you like numbers in your password?");
+    if (confNumbers === true) {
+        charAvail = "0123456789";
+    }
+    var confUpperLetter = confirm("Would you like upper case letters in your password?");
+    if (confUpperLetter === true) {
+        charAvail = charAvail + "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    }
+    var confLowerLetter = confirm("Would you like lower case letters in your password?");
+    if (confLowerLetter === true) {
+        charAvail = charAvail + "abcdefghijklmnopqrstuvwxyz";
+    }
+    var confSpecial = confirm("Would you like special characters in your password?");
+    if (confSpecial === true) {
+        charAvail = charAvail + "~!@#$%^&*?\|,_-";
+    }
+    // Create loop to generate password, with charCount determining the number of iterations, per the string built above, 
+    // and charAvail.length determining the amount of characters available to choose from by the loop
+    for (var i = 0; i < charCount; i++) {
+        var randomChar = Math.floor(Math.random()*charAvail.length);
+        var passChar = charAvail[randomChar];
+        passRandom += passChar;
+    } // return password to generatePassword to end both functions
+    return passRandom;
+    ```
 
 ## Acknowledgements
 
