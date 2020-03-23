@@ -17,13 +17,13 @@ My next challenge was moving the logic into js and creating functions as part of
 
 After discussion with Corbin Brockbank, we were able to pinpoint the NaN reference could have been related to a typographical error for how the variable "passRandom" was adding to itself, and confirmed by Kerwin Hy.  Further discussion with Mr. Hy led to a review of each of the variables to ensure proper assignments.  When adding "return" back into the function, the password successfully is added to the page.
 
-<img src="https://github.com/davisbradleyj/Password_Generator/tree/master/assets/firstLook.png" width="400">
-<img src="https://github.com/davisbradleyj/Password_Generator/tree/master/assets/characterPrompt.png" width="400">
-<img src="https://github.com/davisbradleyj/Password_Generator/tree/master/assets/numberPrompt.png" width="400">
-<img src="https://github.com/davisbradleyj/Password_Generator/tree/master/assets/upperCasePrompt.png" width="400">
-<img src="https://github.com/davisbradleyj/Password_Generator/tree/master/assets/lowerCasePrompt.png" width="400">
-<img src="https://github.com/davisbradleyj/Password_Generator/tree/master/assets/specialPrompt.png" width="400">
-<img src="https://github.com/davisbradleyj/Password_Generator/tree/master/assets/passwordOutput.png" width="400">
+<img src="https://github.com/davisbradleyj/Password_Generator/blob/master/assets/firstLook.png">
+<img src="https://github.com/davisbradleyj/Password_Generator/blob/master/assets/characterPrompt.png">
+<img src="https://github.com/davisbradleyj/Password_Generator/blob/master/assets/numberPrompt.png">
+<img src="https://github.com/davisbradleyj/Password_Generator/blob/master/assets/upperCasePrompt.png">
+<img src="https://github.com/davisbradleyj/Password_Generator/blob/master/assets/lowerCasePrompt.png">
+<img src="https://github.com/davisbradleyj/Password_Generator/blob/master/assets/specialPrompt.png">
+<img src="https://github.com/davisbradleyj/Password_Generator/blob/master/assets/passwordOutput.png">
 
 ## Code Snippet
 
@@ -63,7 +63,8 @@ function setPassword() {
         passRandom += passChar;
     } // return password to generatePassword to end both functions
     return passRandom;
-    ```
+};
+```
 
 ## Acknowledgements
 
